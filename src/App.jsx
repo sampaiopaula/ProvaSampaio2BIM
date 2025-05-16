@@ -5,13 +5,29 @@ import './App.css'
 import Tarefa from './assets/componentes/Tarefa'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [ count, setCount] = useState(1)
+  const [ texto, setTexto] = useState("")
+
+  const handleClick = () => {
+    setCount(count * 2)
+   console.log(count)
+  }
+  const handleTexto = (e) => {
+    console.log(e.target.value)
+    setTexto(e.target.value)
+  
+  }
 
   return (
     <>
-      <Tarefa>
-        
-      </Tarefa>
+     <div className='card1'>
+      <input type='text'
+       placeholder='digite aqui' 
+       onChange={handleTexto}/>
+      <button className='botao' onClick={handleClick}>clique aqui</button>
+      {count}
+     </div>
+      
         
     </>
   )
