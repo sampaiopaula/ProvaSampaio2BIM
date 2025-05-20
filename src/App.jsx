@@ -20,14 +20,23 @@ function App() {
 
   return (
     <>
-     <div className='card1'>
-      <input type='text'
-       placeholder='digite aqui' 
-       onChange={handleTexto}/>
-      <button className='botao' onClick={handleClick}>clique aqui</button>
-      {count}
+    <div className='ali'>
+          <div className='selecao'>
+            <input type='text'
+        placeholder='digite aqui' 
+        onChange={handleTexto}/>
+        <button className='botao2' onClick={handleClick}>Buscar</button>
+
+          </div>
+
+      <div className='card1'>
+        <input type='text'
+        placeholder='digite aqui' 
+        onChange={handleTexto}/>
+        <button className='botao' onClick={handleClick}>clique aqui</button>
+        {count}
+      </div>
      </div>
-      
         
     </>
   )
