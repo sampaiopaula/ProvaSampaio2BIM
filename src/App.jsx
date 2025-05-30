@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Tarefa from './assets/componentes/Tarefa'
+import Cima from './assets/componentes/Cima'
 
 function App() {
   const [ count, setCount] = useState(1)
@@ -20,14 +21,7 @@ function App() {
 
   return (
     <>
-    <div className='ali'>
-          <div className='selecao'>
-            <input type='text'
-        placeholder='digite aqui' 
-        onChange={handleTexto}/>
-        <button className='botao2' onClick={handleClick}>Buscar</button>
-
-          </div>
+        <Cima handleClick={handleClick} handleTexto={handleTexto} />
 
       <div className='card1'>
         <input type='text'
@@ -36,8 +30,8 @@ function App() {
         <button className='botao' onClick={handleClick}>clique aqui</button>
         {count}
       </div>
-     </div>
-        
+     
+        <Tarefa  data={"23/09/2000"} materia={"Portugues"}mat={"Feito"} descriçao={"faça tatatatatatatatatatata com tatatatatt pararararararara chdhddvewbb por tsfstscvsgsvsg"}/>
     </>
   )
 }

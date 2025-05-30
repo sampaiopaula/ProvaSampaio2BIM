@@ -19,14 +19,14 @@
 
 }
 .card1{
-  width: 300px;
+  width: 1000px;
   height: 200px;
   background-color: #000000;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 5%;
+
  
 }
 .botao{color: rgb(168, 255, 165);
@@ -42,9 +42,13 @@ flex-direction: row;
   ;}
 
 .selecao{
-  width: 300px;
-  height: 150px;
+  width: 2000px;
+  height: 50px;
   background-color: #888;
+  margin: 10px 10px 10px 10px ;
+  display: flex;
+    align-items:center;
+    justify-content: center
 }
 
 .ali{
@@ -80,12 +84,9 @@ padding: 30px;
   color: aliceblue;
   margin: 20px;
 }
-.data{
-  width: 50px;
-  height: 50px;
-  background-color: rgb(244, 243, 243);
 
-}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
