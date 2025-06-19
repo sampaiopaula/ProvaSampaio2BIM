@@ -1,0 +1,22 @@
+.hedder{
+    background-color: rgb(84, 186, 186);
+    color: aliceblue;
+    border-radius: 20px auto;
+    padding: 20px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.hedder h1{
+    font-size: 30px ;
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.hedder h2{
+    font-size: 25px ;
+    font-weight: bold;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}

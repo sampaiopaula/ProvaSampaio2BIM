@@ -1,39 +1,78 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Tarefa from './assets/componentes/Tarefa'
 import Cima from './assets/componentes/Cima'
+import Hedder from './assets/componentes/Hedder'
+import TaskForm from './assets/componentes/TaskForm/TaskForm'
 
 function App() {
-  const [ count, setCount] = useState(1)
-  const [ texto, setTexto] = useState("")
+  const {tasks, setTasks} = useState([]);
 
-  const handleClick = () => {
-    setCount(count * 2)
-   console.log(count)
+ useEffect(() => {
+  if (!tasks || tasks.length === 0) return;
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}, [tasks]);
+
+useEffect(() => {
+  if (!tasks || tasks.length === 0) return;
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}, [tasks]);
+
+  function addTasks(name){
+      setTasks((prev) => {
+        return[...prev,{name: name, done: false}]
+
+      })
+    }
+
+    function removeTask(indexToRemove){
+      setTasks((prev) => {
+        return prev.filter((_, index ) => index !== indexToRemove)
+      })
+    }
+    function updateTaskDone(taskIndex, newDone) {
+      setTasks((prev) => {
+        const newTasks = [...prev]
+        newTasks[taskIndex].done =newDone;
+        return newTasks
+      })
+    }
+  function renameTasks(index, newName){
+    setTasks((prev) => {
+      newTasks = [...prev];
+      newTasks[index].name = newName;
+      return newTasks
+    })
   }
-  const handleTexto = (e) => {
-    console.log(e.target.value)
-    setTexto(e.target.value)
-  
+
+  const numberComplete = tasks?.filter((t) => t.done).length || 0;
+  const numberTotal = tasks?.length || 0;
+
+function getMessage() {
+  const porcentagem = (numberComplete / numberTotal) * 100;
+
+  if (porcentagem === 0) {
+    return "Tenha um dia de Vencedor, liste e faça suas tarefas!";
   }
+
+  return "Continue assim!";
+}
 
   return (
-    <>
-        <Cima handleClick={handleClick} handleTexto={handleTexto} />
+    <div>
+    <Hedder/> 
+       <span>{numberComplete} / {numberTotal} Completas</span>
+        <p>{getMessage()}</p>
 
-      <div className='card1'>
-        <input type='text'
-        placeholder='digite aqui' 
-        onChange={handleTexto}/>
-        <button className='botao' onClick={handleClick}>clique aqui</button>
-        {count}
+        <TaskForm onAdd={addTasks}/>
+      
       </div>
      
-        <Tarefa  data={"23/09/2000"} materia={"Portugues"}mat={"Feito"} descriçao={"faça tatatatatatatatatatata com tatatatatt pararararararara chdhddvewbb por tsfstscvsgsvsg"}/>
-    </>
-  )
+       
+  
+  );
 }
 
 export default App
