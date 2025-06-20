@@ -1,0 +1,11 @@
+.checkBox{
+    display: flex;
+    align-items: center;
+}
+.corv{
+    color: green;
+
+}
+.cora{
+    color: red;
+}

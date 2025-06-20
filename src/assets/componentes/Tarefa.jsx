@@ -1,22 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { MdDelete } from 'react-icons/md';
 import './Tarefa.css'
+import CheckBox from './CheckBox'
 
-function Tarefa({data,materia,mat,descriçao}) {
+
+export default function Task({name, done, onToggle, onRemove, onRename}) {
+  const [editMode, setEditMode] = useState(false);
 
   return (
-    <>
     
-        <div className='card de'>
-          <div className='cont'>
-        <div className='mat'>{mat}</div>
-        <div className='data'>{data}</div>
-        <h3 className='tex'>{materia}</h3>
+    <div className={`task ${done ? "done" : ""}`}>
+     <div className='container-task'>
+
+    <CheckBox checked={done} onClick={() => onToggle(!done)}/>
+      {!editMode && (
+        <div className='task-name' onClick={() => setEditMode((prev) => !prev)}>
+           <span>{name}</span>
         </div>
-        <div >
-        <h6 className='descri'>{descriçao}</h6></div>
+      ) }
+
+       {editMode && (
+        <form className='task-form'
+        onSubmit={(ev) => {
+          ev.preventDefault();
+          setEditMode(false)
+        }}
+        > 
+        <input    
+        type='text'
+        value={name}
+        onChange={(ev) => onRename(ev.target.value)}
+        />
+        </form>
+      ) }
       </div>
-      
-    </>
+      <button className='trash' onClick={onRemove}>
+        <MdDelete size={30} color='#388888' />
+      </button>
+    </div>
+
+
+
+
   )
 }
-export default Tarefa

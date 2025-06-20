@@ -1,41 +1,67 @@
-.card{
-    width: 400px;
-    height: 100px;
-    background-color: rgb(236, 96, 96);
-    border-radius: 2%;
-    display: flex;
+.task {
+  background-color: rgb(52, 47, 60);
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  display: flex;
   align-items: center;
-  padding: 30px;
-  
-  }
-  .cont{
-    display: flex;
-    flex-direction: row;
-  align-items: center;
-  }
-  .tex{
-    color: aliceblue;
-    margin: 20px;
-  }
-  .data{
-  color: antiquewhite;
-  
-  }
-  .mat{
-    width: 50px;
-    height: 50px;
-    background-color: rgb(244, 243, 243);
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-  }
-  .de{
-    align-items: center;
-    justify-items: center;
-    display: flex;
-  flex-direction: column;
-  margin: 10px;
+  justify-content: space-between;
+  transition: opacity .3s linear;
+  min-height: 15px;
+}
 
-  }
+.container-task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.task-name {
+  margin: 6px;
+}
+
+.task.done {
+  opacity: 0.3;
+}
+
+.task-name .task-form {
+  flex-grow: 1;
+}
+.task-name  {
+  flex-grow: 1;
+}
+
+
+.task span {
+  position: relative;
+  margin-left: 10px;
+}
+
+.checked {
+  display: flex;
+  align-items: center;
+}
+
+.trash {
+  background: none;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  height: auto;
+}
+
+.task-form input {
+  width: 100%;
+  font-size: 16px;
+  color: blanchedalmond;
+  border: none;
+  padding: 2px 4px;
+  background-color: transparent;
+}
+
+.task-form input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}

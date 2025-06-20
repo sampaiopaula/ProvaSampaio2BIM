@@ -1,22 +1,32 @@
-.hedder{
-    background-color: rgb(84, 186, 186);
-    color: aliceblue;
-    border-radius: 20px auto;
-    padding: 20px ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+
+.hedder {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  padding: 30px 20px;
+  margin: 20px auto;
+  background: linear-gradient(135deg, #2bc393, #1e90ff);
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
-.hedder h1{
-    font-size: 30px ;
-    margin: 0;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+.hedder h1 {
+  font-size: 40px;
+  margin: 0;
+  font-weight: 600;
 }
-.hedder h2{
-    font-size: 25px ;
-    font-weight: bold;
-    margin: 0;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+
+.hedder h2 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 400;}
+.main{
+  max-width: 650px;
+  margin: 20px auto;
 }
